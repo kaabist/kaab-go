@@ -14,6 +14,7 @@ import (
 	"os/exec"
 	"os/signal"
 	"runtime"
+	"runtime/debug"
 	"strings"
 	"syscall"
 
@@ -21,8 +22,19 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// version is overridden at build time (-ldflags "-X main.version=...").
+// version is overridden at build time (-ldflags "-X main.version=..."). A binary built with
+// `go install github.com/kaabist/kaab-go/cmd/kaab@vX.Y.Z` has no ldflags; it reports the module
+// version Go recorded instead.
 var version = "dev"
+
+func init() {
+	if version != "dev" {
+		return
+	}
+	if info, ok := debug.ReadBuildInfo(); ok && info.Main.Version != "" && info.Main.Version != "(devel)" {
+		version = strings.TrimPrefix(info.Main.Version, "v")
+	}
+}
 
 const (
 	exitOK     = 0

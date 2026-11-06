@@ -3,7 +3,19 @@
 The SDK's version is the Kaabist API's major.minor (`info.version` of the OpenAPI document) and a
 patch of its own; a breaking change of the API comes only with `/v2` (EPIC-34 T6).
 
-## Unreleased
+## 1.40.1
+
+- `kaab version` reports the release's version when the CLI was installed with `go install`
+  (it said `dev`).
+- The job summary says `1 credit`, not `1 credits`.
+- The SDK's own version test is skipped outside the monorepo, so `go test ./...` passes in this
+  module.
+
+## 1.40.0
+
+First public release, on github.com/kaabist/kaab-go, with CLI binaries for Linux, macOS and
+Windows (6 November 2026).
+
 
 - Removed: research and search (EPIC-77). `c.Research`, `c.Search`, `WaitForResearch`,
   `ResearchWaitOptions`, `Error.Research`, the research types and the `kaab research` and

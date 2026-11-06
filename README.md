@@ -175,9 +175,15 @@ Per request: `kaab.WithWait`, `WithIdempotencyKey`, `WithRequestTimeout`, `WithR
 
 ## The `kaab` CLI
 
+Download a build for Linux, macOS or Windows from the
+[releases page](https://github.com/kaabist/kaab-go/releases) (verify it against `checksums.txt`),
+or build it with Go:
+
 ```bash
 go install github.com/kaabist/kaab-go/cmd/kaab@latest
+```
 
+```bash
 kaab auth login
 kaab jobs run --url https://example.com --extract '{"title":"h1"}' --wait 30
 kaab programs push report.json

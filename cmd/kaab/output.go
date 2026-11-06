@@ -127,7 +127,12 @@ func (a *app) printJob(job *client.Job) error {
 		summary += fmt.Sprintf(" · %s", *job.Meta.Tier)
 	}
 	if job.Meta.Credits != nil && job.Meta.Credits.Settled != nil {
-		summary += fmt.Sprintf(" · %s credits", strconv.FormatFloat(float64(*job.Meta.Credits.Settled), 'f', -1, 32))
+		settled := float64(*job.Meta.Credits.Settled)
+		unit := "credits"
+		if settled == 1 {
+			unit = "credit"
+		}
+		summary += fmt.Sprintf(" · %s %s", strconv.FormatFloat(settled, 'f', -1, 32), unit)
 	}
 	_, _ = fmt.Fprintln(a.env.stderr, summary)
 	if string(job.Status) == "succeeded" && job.Data != nil {

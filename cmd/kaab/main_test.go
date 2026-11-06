@@ -335,7 +335,7 @@ func TestJobsRunExitCodes(t *testing.T) {
 
 	status = "succeeded"
 	out, errOut, code := h.run("", "jobs", "run", "--url", "https://example.com/p/1", "--extract", "@"+schema, "--wait", "30")
-	if code != 0 || strings.TrimSpace(out) != "{\n  \"title\": \"Kulaklık\"\n}" || !strings.Contains(errOut, "succeeded in 1.2 s · http · 1 credits") {
+	if code != 0 || strings.TrimSpace(out) != "{\n  \"title\": \"Kulaklık\"\n}" || !strings.Contains(errOut, "succeeded in 1.2 s · http · 1 credit") {
 		t.Fatalf("succeeded: %d %q %q", code, out, errOut)
 	}
 	req := h.seen[len(h.seen)-1]
