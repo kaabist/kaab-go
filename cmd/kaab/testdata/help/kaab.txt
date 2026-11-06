@@ -1,0 +1,31 @@
+kaab runs and inspects Kaabist jobs, programs, sessions, proposals, schedules and webhooks.
+
+Authenticate once with `kaab auth login`; KAAB_API_KEY and KAAB_BASE_URL override the stored profile.
+
+Usage:
+  kaab [command]
+
+Available Commands:
+  auth        Store, show and forget API keys
+  completion  Generate the autocompletion script for the specified shell
+  credits     Show the credit balance and its lots
+  help        Help about any command
+  jobs        Run, inspect and answer jobs
+  open        Open a resource in the panel
+  programs    Push, pull, lint and compare programs
+  proposals   Review healing proposals
+  schedules   Run programs on a cron
+  sessions    Store, check and delete browser sessions
+  usage       Show usage grouped by day, program, tier or tag
+  version     Print the CLI's version
+  webhooks    Manage webhook endpoints
+
+Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+  -h, --help              help for kaab
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)
+  -v, --version           version for kaab
+
+Use "kaab [command] --help" for more information about a command.

@@ -1,0 +1,18 @@
+Pushes a program definition: a new name creates the program, a known one gets a new
+version. The version is a draft unless --publish, which also moves alias latest.
+
+Usage:
+  kaab programs push FILE.json [flags]
+
+Flags:
+      --description string   a new program's description
+  -h, --help                 help for push
+      --name string          the program's name (the definition's by default)
+      --notes string         notes on the new version
+      --publish              publish the version (moves alias latest)
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)

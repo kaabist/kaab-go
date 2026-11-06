@@ -1,0 +1,21 @@
+Store, check and delete browser sessions
+
+Usage:
+  kaab sessions [command]
+
+Available Commands:
+  create      Store a Playwright storage state as a session
+  delete      Delete a session
+  list        List sessions
+  verify      Run a session's validity probe (costs verify credits)
+
+Flags:
+  -h, --help   help for sessions
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)
+
+Use "kaab sessions [command] --help" for more information about a command.

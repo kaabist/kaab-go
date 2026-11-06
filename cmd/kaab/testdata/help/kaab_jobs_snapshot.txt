@@ -1,0 +1,15 @@
+Download a job's page snapshot (the final step's by default)
+
+Usage:
+  kaab jobs snapshot JOB_ID [flags]
+
+Flags:
+  -h, --help            help for snapshot
+  -o, --output string   write to this file instead of stdout
+      --step string     the step whose snapshot to download (steps[1])
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)

@@ -1,0 +1,17 @@
+Create an endpoint; its secret is printed once
+
+Usage:
+  kaab webhooks create --url URL --events job.*,credits.low [flags]
+
+Flags:
+      --description string   a note
+      --events strings       event types or patterns: job.*, credits.low, * (comma-separated)
+  -h, --help                 help for create
+      --mode string          live, test or both (both by default)
+      --url string           the https endpoint
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)

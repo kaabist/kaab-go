@@ -1,0 +1,13 @@
+Cancel a job (refunds what it reserved and did not use)
+
+Usage:
+  kaab jobs cancel JOB_ID [flags]
+
+Flags:
+  -h, --help   help for cancel
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)

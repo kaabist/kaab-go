@@ -1,0 +1,10 @@
+{
+  "title": "h1",
+  "sku": { "selector": ".sku", "regex": "SKU:\\s*([A-Z0-9-]+)" },
+  "price": {
+    "candidates": [{ "selector": ".price" }, { "selector": "[data-col=amount]" }],
+    "type": "money",
+    "locale": "tr",
+    "currency": "TRY"
+  }
+}

@@ -1,0 +1,19 @@
+Checks the key against the API (GET /org) and stores it in the OS keychain, or in
+~/.config/kaab/credentials.toml (0600) when there is no keychain. A profile holds one live and
+one test key; --test then selects the test one.
+
+Usage:
+  kaab auth login [flags]
+
+Flags:
+      --file-storage          keep the key in credentials.toml rather than the OS keychain
+  -h, --help                  help for login
+      --key string            the API key (read from stdin when absent)
+      --org string            a note naming the organisation (its name by default)
+      --panel-url kaab open   the panel's URL, for kaab open (https://app.kaab.ist by default)
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)

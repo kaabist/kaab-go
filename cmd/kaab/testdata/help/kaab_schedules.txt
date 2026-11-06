@@ -1,0 +1,22 @@
+Run programs on a cron
+
+Usage:
+  kaab schedules [command]
+
+Available Commands:
+  create      Create a schedule
+  list        List schedules
+  pause       Pause a schedule
+  resume      Resume a paused schedule
+  runs        List a schedule's runs, newest first
+
+Flags:
+  -h, --help   help for schedules
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)
+
+Use "kaab schedules [command] --help" for more information about a command.

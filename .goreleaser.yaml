@@ -1,0 +1,43 @@
+# The `kaab` CLI's release build. CI runs it as a dry run on every change to sdks/go
+# (`goreleaser release --snapshot --clean --skip=publish`); the release pipeline publishes
+# from an `sdks/go/vX.Y.Z` tag, passing the version through GORELEASER_CURRENT_TAG.
+version: 2
+project_name: kaab
+
+builds:
+  - id: kaab
+    main: ./cmd/kaab
+    binary: kaab
+    env:
+      - CGO_ENABLED=0
+    goos: [linux, darwin, windows]
+    goarch: [amd64, arm64]
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X main.version={{ .Version }}
+
+archives:
+  - id: kaab
+    ids: [kaab]
+    formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    name_template: "kaab_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE
+      - README.md
+
+checksum:
+  name_template: checksums.txt
+
+snapshot:
+  version_template: "{{ incpatch .Version }}-snapshot"
+
+changelog:
+  disable: true
+
+release:
+  # Published by the release pipeline, not by goreleaser from a developer's machine.
+  disable: true

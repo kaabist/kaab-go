@@ -1,0 +1,21 @@
+Manage webhook endpoints
+
+Usage:
+  kaab webhooks [command]
+
+Available Commands:
+  create      Create an endpoint; its secret is printed once
+  deliveries  List an endpoint's deliveries, newest first
+  list        List endpoints
+  test        Send a ping to an endpoint and show its answer
+
+Flags:
+  -h, --help   help for webhooks
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)
+
+Use "kaab webhooks [command] --help" for more information about a command.

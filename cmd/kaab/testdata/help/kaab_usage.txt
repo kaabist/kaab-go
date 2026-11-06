@@ -1,0 +1,16 @@
+Show usage grouped by day, program, tier or tag
+
+Usage:
+  kaab usage [flags]
+
+Flags:
+      --from string       first day, YYYY-MM-DD (30 days ago by default)
+      --group-by string   day, program, tier or tag (day by default)
+  -h, --help              help for usage
+      --to string         last day, YYYY-MM-DD (today by default)
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)

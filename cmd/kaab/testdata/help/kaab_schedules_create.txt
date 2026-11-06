@@ -1,0 +1,21 @@
+Create a schedule
+
+Usage:
+  kaab schedules create (--program REF --cron EXPR | --file BODY.json) [flags]
+
+Flags:
+      --change-detection     emit schedule.changed when the data changes
+      --cron string          five-field cron
+      --field stringArray    with --change-detection: a field path to compare (repeatable)
+      --file string          a JSON body (POST /schedules); flags override it
+  -h, --help                 help for create
+      --input stringArray    a program input, name=value (repeatable)
+      --program string       the program reference (name@alias follows the alias)
+      --timezone string      IANA time zone (UTC by default)
+      --webhook-url string   where the runs' events go
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)

@@ -1,0 +1,23 @@
+Push, pull, lint and compare programs
+
+Usage:
+  kaab programs [command]
+
+Available Commands:
+  alias       Point a program's aliases at versions
+  diff        Print the JSON Patch from version V1 to version V2
+  lint        Lint a definition; exit 1 when it has errors
+  list        List programs
+  pull        Print (or save) a program version's definition
+  push        Create the program a definition file names, or add a version to it
+
+Flags:
+  -h, --help   help for programs
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)
+
+Use "kaab programs [command] --help" for more information about a command.

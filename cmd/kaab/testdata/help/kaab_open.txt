@@ -1,0 +1,18 @@
+Open a resource in the panel
+
+Usage:
+  kaab open [command]
+
+Available Commands:
+  job         Open a job's page in the panel
+
+Flags:
+  -h, --help   help for open
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)
+
+Use "kaab open [command] --help" for more information about a command.

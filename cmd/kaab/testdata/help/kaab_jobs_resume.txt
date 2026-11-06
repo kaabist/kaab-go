@@ -1,0 +1,20 @@
+Resume a job that needs attention
+
+Usage:
+  kaab jobs resume JOB_ID (--apply PRP_ID [--promote] [--remember site] | --skip-step | --retry-from-checkpoint | --continue | --abort) [flags]
+
+Flags:
+      --abort                   abort the job
+      --apply string            apply this proposal (prp_…)
+      --continue                continue after a takeover
+  -h, --help                    help for resume
+      --promote                 with --apply: publish the change as a new version
+      --remember string         with --apply: none or site
+      --retry-from-checkpoint   run again from the last checkpoint
+      --skip-step               skip the step that stopped
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)

@@ -1,0 +1,32 @@
+Creates a job (POST /jobs). With --wait N the request is held up to N seconds (≤ 60) for
+the result: a succeeded job's data is printed as JSON on stdout and a summary on stderr.
+
+Exit codes: 0 succeeded (or still running), 2 failed or canceled, 3 parked, waiting for an
+input or for attention.
+
+Usage:
+  kaab jobs run (--url URL --extract @schema.json | --program NAME[@VERSION] [--input k=v]...) [flags]
+
+Examples:
+  kaab jobs run --url https://example.com --extract '{"title":"h1"}' --wait 30
+  kaab jobs run --program acme-report@production --input report_id=42 --session acme --wait 60
+
+Flags:
+      --dry-run                  stop before the first side-effect step
+      --extract string           the extract schema: @file.json, - (stdin) or inline JSON
+  -h, --help                     help for run
+      --idempotency-key string   the Idempotency-Key (a ULID by default)
+      --input stringArray        a program input, name=value (repeatable; JSON values are parsed)
+      --max-tier string          the highest tier the job may use: http, browser or apex
+      --program string           a program reference: name, name@3, name@production, prg_…, pv_…
+      --session string           a stored session to run in
+      --tag stringArray          a tag (repeatable)
+      --url string               the page of a shorthand job
+      --wait int                 seconds to wait for the result (1–60)
+      --webhook-url string       where the job's events are delivered
+
+Global Flags:
+      --base-url string   API base URL (KAAB_BASE_URL; https://api.kaab.ist/v1 by default)
+      --json              print the API's JSON instead of a table
+      --profile string    profile to use (KAAB_PROFILE; the current profile by default)
+      --test              use the profile's test-mode key (sk_test_)
